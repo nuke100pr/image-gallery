@@ -1,0 +1,157 @@
+h1 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-top: 20px;
+  padding: 10px;
+
+  align-items: center;
+  appearance: none;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: #fc4a1a;
+  background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);
+  background: linear-gradient(to right, #f7b733, #fc4a1a);
+}
+
+.image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(0deg);
+  /* the 3D object is positioned 1000 pixels away from the user. the element is rotated 0 degrees around the Y-axis, which means it is not rotated at all */
+  transition: transform 0.7s;
+  /* when the "transform" property is changed, such as when an element is being rotated, scaled or translated, the change will be animated over a period of 0.7 seconds, creating a smooth and gradual transition effect. */
+}
+
+.image-container span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  transform: rotateY(calc(var(--i) * 24deg)) translateZ(400px);
+  /* This rotates the element around the Y-axis by a certain angle. The calc() function performs a mathematical calculation, and in this case, it multiplies the value of a custom property --i by 45 degrees.  */
+  /* This moves the element along the Z-axis, which is the depth axis in a 3D space */
+}
+
+.image-container span img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+.btn-container {
+  position: relative;
+  width: 80%;
+}
+
+/* .btn {
+  position: absolute;
+  bottom: -80px;
+  background-color: darkgray;
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.5);
+} */
+
+#prev {
+  left: 20%;
+}
+
+#next {
+  right: 20%;
+}
+
+/* CSS */
+.btn {
+  align-items: center;
+  appearance: none;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.btn:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.btn:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
